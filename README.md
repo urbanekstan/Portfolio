@@ -1,2 +1,2 @@
 # Portfolio
-Portfolio of Personal Projects and University Scripts 
+Portfolio of Personal Projects - Networking and Cybersecurity - and University Scripts 
