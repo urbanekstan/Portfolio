@@ -3,7 +3,7 @@
 # This simulates methane diffusion during fracking.
 
 ##########################
-# Methane and CNT read-ins
+# Reading in methane and defining boundaries
 
 5150 atoms
 3 atom types
@@ -27,8 +27,7 @@ Atoms
 5 1 0.0 9.83804858699 0.70916978246 0.0297230203843
 
 ###################################
-# Combining methane and CNT scripts
-# Simulation definition
+# Specifying physics and CNT
 
 dimension       3
 units        lj
