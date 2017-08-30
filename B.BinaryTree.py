@@ -1,7 +1,7 @@
 ##################################################################
 #  File: TestBinaryTree.py
 
-#  Description: creates a binary trees and test different functions
+#  Description: Creates a binary trees and test different functions
 
 #  Student Name: Stanley Urbanek
 

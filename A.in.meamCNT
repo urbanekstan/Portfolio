@@ -1,4 +1,5 @@
-# Using MEAM potential for Carbon Nanotube (CNT)
+# LAMMPS file 
+# MAKING Carbon Nanotube (CNT) using MEAM potential
 
 dimension 3
 units        lj      

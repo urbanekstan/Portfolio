@@ -2,9 +2,13 @@
 ######################################################################
 # File:  SimulationVectors.py
 #
-# Decription: Creates lattice using linear combination of 2 basis
+# Decription: Outputs 3D positions of carbon locations in Carbon Nanotube
+#             
+#             Creates lattice using linear combination of 2 basis
 #             vectors, and returns 2D and 3D atomic locations
-#            
+#
+#             Uses turtle graphics to visualize
+#
 # Author: Stanley Urbanek
 #
 # Created: 4/20/15

@@ -160,7 +160,7 @@ class LinkedList (object):
   def copyList (self):
     # create a new linked List
     copyLL = LinkedList()
-       current = self.first
+    current = self.first
     if current == None:
       return copyLL
     # run through current link list and add to new Link List 

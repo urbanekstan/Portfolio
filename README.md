@@ -9,9 +9,9 @@ SUMMARY: This is a portfolio designed to show some of the scripts that I have wr
 	
 GUIDE: A.name = Source A; B.name = Source B; etc..
 
-There are a few sources:
+SOURCES:
 
-A) Simulation of Methane diffusion through shale rock after fracking. CNTs used to simulate microscopic pores in shale rock. This was year long research.
+A) RESEARCH SIMULATION of Methane diffusion through shale rock after fracking. CNTs used to simulate microscopic pores in shale rock. This was year long research.
 
    I have videos of the simulation if you are interested. 
 
