@@ -11,7 +11,7 @@ GUIDE: A.name = Source A; B.name = Source B; etc..
 
 SOURCES:
 
-A) RESEARCH SIMULATION of Methane diffusion through shale rock after fracking. CNTs used to simulate microscopic pores in shale rock. This was year long research.
+A) RESEARCH SIMULATION of Methane diffusion through shale rock after fracking. CNTs used to simulate microscopic pores in shale rock. This was a year long research initiative.
 
    I have videos of the simulation if you are interested. 
 
