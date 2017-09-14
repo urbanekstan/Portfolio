@@ -25,7 +25,7 @@ TLDR: Check out
 
       -> A.ApacheOnPi.sh
          = Most recent work, setting up a Raspberry Pi server from scratch
-      -> C.SimulationVectors.py
+      -> B.SimulationVectors.py
       	 = Script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
-      -> D.BinaryTree.py or B.LinkedLists.py
+      -> C.BinaryTree.py or B.LinkedLists.py
       	 = Python script demonstrating binary trees and linked lists
