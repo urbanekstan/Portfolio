@@ -10,7 +10,7 @@ SOURCES:
 
    I have videos of the simulation if you are interested. 
 
-   Languages: LAMMPS (by Sandia National Labs), Python
+   Languages: Python, LAMMPS (by Sandia National Labs), Bash (shell script)
 
 
   C) CS 313E - ELEMENTS OF SOFTWARE DESIGN
