@@ -23,7 +23,7 @@ ifconfig
 sudo /etc/init.d/ssh start
 
 #Install Apache and PHP
-sudo apt-get install apache2 php5 libapache2-mod-php5
+sudo apt-get install apache2 php7.0 libapache2-mod-php7.0
 sudo service apache2 restart
 
 #Confirm it works
@@ -31,7 +31,7 @@ ifconfig
 echo 'Confirm this worked - Put IP address of Pi in to web browser'
 
 #Install MySQL
-sudo apt-get install mysql-server mysql-client php-mysql 
+sudo apt-get install mysql-server mysql-client php7.0-mysql 
 #EDITED: WAS php5-mysql but had issues
 
 #Install FTP
