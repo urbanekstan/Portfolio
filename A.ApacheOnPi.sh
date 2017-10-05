@@ -23,7 +23,7 @@ ifconfig
 sudo /etc/init.d/ssh start
 
 #Install Apache and PHP
-sudo apt-get install apache2 php7.0 libapache2-mod-php7.0
+sudo apt-get install apache2 php7.0 libapache2-mod-php7.0 phpmyadmin
 sudo service apache2 restart
 
 #Confirm it works
