@@ -27,5 +27,5 @@ TLDR: Check out
          = Most recent work, setting up a Raspberry Pi server from scratch
       -> B.SimulationVectors.py
       	 = Script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
-      -> C.BinaryTree.py or B.LinkedLists.py
+      -> C.BinaryTree.py or C.LinkedLists.py
       	 = Python script demonstrating binary trees and linked lists
