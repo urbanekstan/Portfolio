@@ -1,8 +1,20 @@
-SUMMARY: This is a portfolio designed to show some of the scripts that I have written myself.
+***SUMMARY***
+This is a portfolio designed to show some of the scripts that I have written myself.
 
-GUIDE: A.name = Source A; B.name = Source B; etc..
+***TLDR***
+Check out
 
-SOURCES:
+      -> A.ApacheOnPi.sh
+         = Most recent work, setting up a Raspberry Pi server from scratch
+      -> B.SimulationVectors.py
+      	 = Script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
+      -> C.BinaryTree.py or C.LinkedLists.py
+      	 = Python script demonstrating binary trees and linked lists
+	 
+***GUIDE***
+A.name = Source A; B.name = Source B; etc..
+
+***SOURCES***
 
   A) CURRENT PROJECTS on Raspberry Pi server
 
@@ -21,11 +33,3 @@ SOURCES:
    Class in 2013
    Demonstrates Basic python programming and script documentation
 
-TLDR: Check out
-
-      -> A.ApacheOnPi.sh
-         = Most recent work, setting up a Raspberry Pi server from scratch
-      -> B.SimulationVectors.py
-      	 = Script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
-      -> C.BinaryTree.py or C.LinkedLists.py
-      	 = Python script demonstrating binary trees and linked lists
