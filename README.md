@@ -4,8 +4,8 @@ This is a portfolio designed to show some of the scripts that I have written mys
 ***TLDR***
 Check out
 
-      -> A.ApacheOnPi.sh
-         = Most recent work, setting up a Raspberry Pi server from scratch
+      -> A.ApacheOnPi.sh     
+         = Setting up LAMP server on Raspberry Pi server
       -> B.SimulationVectors.py
       	 = Script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
       -> C.BinaryTree.py or C.LinkedLists.py
