@@ -1,5 +1,5 @@
 #######################################################################
-## Name: ApacheOnPi.sh
+## Name: RaspPiLAMP.sh
 
 ## Purpose: Installs LAMP Stack on Raspberry Pi running Raspbian from scratch
 ##          Explicitly, script installs Apache2, MySQL, and PHP. Also, FTP
