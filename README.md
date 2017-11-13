@@ -4,10 +4,10 @@ This is a portfolio designed to show some of the scripts that I have written mys
 ***TLDR***
 Check out
 
-      -> A.ApacheOnPi.sh  
-         = Setting up LAMP server on Raspberry Pi server
       -> A.MySQLConnection.py
       	 = Establishes MySQL Connection using Python
+      -> A.RaspPiLAMP.sh  
+         = Sets up LAMP server on Raspberry Pi 
       -> B.SimulationVectors.py
       	 = Script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
       -> C.BinaryTree.py or C.LinkedLists.py
@@ -18,7 +18,7 @@ A.name = Source A; B.name = Source B; etc..
 
 ***SOURCES***
 
-  A) CURRENT PROJECTS on Raspberry Pi server
+  A) CURRENT PROJECTS on MySQL python connection and Raspberry Pi LAMP stack
 
   B) RESEARCH SIMULATION of Methane diffusion through shale rock after fracking. CNTs used to simulate microscopic pores in shale rock. This was a year long research initiative.
 
