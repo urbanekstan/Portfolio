@@ -64,4 +64,6 @@ class MySQLConnection:
         if self.cnxMade:
             self.cnx.close()
 
+        self.cnxMade = 0
+
         return
