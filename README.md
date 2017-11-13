@@ -4,8 +4,10 @@ This is a portfolio designed to show some of the scripts that I have written mys
 ***TLDR***
 Check out
 
-      -> A.ApacheOnPi.sh     
+      -> A.ApacheOnPi.sh  
          = Setting up LAMP server on Raspberry Pi server
+      -> A.MySQLConnection.py
+      	 = Establishes MySQL Connection using Python
       -> B.SimulationVectors.py
       	 = Script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
       -> C.BinaryTree.py or C.LinkedLists.py
