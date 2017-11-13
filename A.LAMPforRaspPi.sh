@@ -1,10 +1,19 @@
-#This script will set up an Apache server on raspberry pi
-#Also installs PHP, MySQL, and FTP
+#######################################################################
+## Name: ApacheOnPi.sh
+
+## Purpose: Installs LAMP Stack on Raspberry Pi running Raspbian from scratch
+##          Explicitly, script installs Apache2, MySQL, and PHP. Also, FTP
+
+## Note: Due to user input, I recommend to copy/paste segments of this script to shell.
+
+## Written/Edited by: Stanley Urbanek
+
+## Date Created: 6/15/17
+
+## Sources:  http://www.wikihow.com/Make-a-Raspberry-Pi-Web-Server
+########################################################################
 
 #REQUIRES USER INTERACTION
-
-#http://www.wikihow.com/Make-a-Raspberry-Pi-Web-Server
-#Edited by Stan Urbanek
 
 #If starting from fresh, update system
 sudo dpkg-reconfigure tzdata
