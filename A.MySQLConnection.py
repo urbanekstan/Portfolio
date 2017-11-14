@@ -42,7 +42,9 @@ class MySQLConnection:
             'database': self.db,
             'raise_on_warnings': True,
         }
-    
+
+        # If security is of concern, should sanitize input here
+        
         # Initialize connection    
         try:
             self.cnx = mysql.connector.connect(**credentials)
