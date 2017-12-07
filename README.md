@@ -12,6 +12,8 @@ Check out
       	 = Script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
       -> C.BinaryTree.py or C.LinkedLists.py
       	 = Python script demonstrating binary trees and linked lists
+      -> E.Demonstration.cpp/h
+      	 = C++ Script written to demonstrate working knowledge of 
 	 
 ***GUIDE***
 A.name = Source A; B.name = Source B; etc..
@@ -35,3 +37,5 @@ A.name = Source A; B.name = Source B; etc..
    Class in 2013
    Demonstrates Basic python programming and script documentation
 
+  E) C++ - Both iterative methods were from a Numberical Analysis course I took in college (fall 2015)
+         - Demonstration is that of various coding principles ~ OOP, multithreading, organization
