@@ -14,13 +14,15 @@
 #include <vector>
 #include <thread>
 #include <time.h> 
+#include <functional>
+#include <unistd.h>
 
 using namespace std;
 
 
 // Initialize thread values
 static const int maxThreads = 5;
-thread thrd;//[maxThreads];
+thread thrd[maxThreads];
 
 // Initialize other values
 static const int sizeOfVectors = 10;

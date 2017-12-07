@@ -13,7 +13,8 @@ Check out
       -> C.BinaryTree.py or C.LinkedLists.py
       	 = Python script demonstrating binary trees and linked lists
       -> E.Demonstration.cpp/h
-      	 = C++ Script written to demonstrate working knowledge of 
+      	 = C++ Script written to demonstrate working knowledge of software principles (OOP, multithreading, organization)
+
 	 
 ***GUIDE***
 A.name = Source A; B.name = Source B; etc..
