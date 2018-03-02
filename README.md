@@ -4,6 +4,8 @@ This is a portfolio designed to show some of the scripts that I have written mys
 ***TLDR***
 Check out
 
+      -> A.Server.py and A.Client.py
+         = A generic Server and Client model using sockets and pickle
       -> A.MySQLConnection.py
       	 = Establishes MySQL Connection using Python
       -> A.RaspPiLAMP.sh  
