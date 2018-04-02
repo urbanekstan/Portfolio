@@ -1,13 +1,12 @@
+from random import randint
+from os import system
+from time import sleep
+
 def main():
 
-    deck = Deck(1)
-    p1   = Player()
-    p1.dealMeIn(deck)
-    p1.print()
-    p1.hitOrStand(deck)
-    print(p1.finalHandValue)
- 
-
+    system('clear')
+    game = Game(5)
+    game.playOneRound()
     
   
 '''
@@ -42,9 +41,9 @@ def main():
 # Card train implements a hi-lo count
 
 # NOT READY FOR 2+ decks
+# Dealer hits on hard 16, soft 17
 # ---------------------------------------------------------
 '''
-from random import randint
 
 class Game:
 # Handles game play
@@ -53,8 +52,8 @@ class Game:
         # Initialize the deck and players
         # Assuming only 2 players ~ dealer and me, but could scale up
         self.Deck         = Deck()
-        self.Dealer       = Player()
-        self.Me           = Player()
+        self.Dealer       = Player(1)
+        self.Me           = Player(0)
         self.maxRounds    = maxRounds
         self.currentRound = 1
 
@@ -71,13 +70,47 @@ class Game:
     
     def playOneRound(self):
         # Play one round of BlackJack
-        # First deal everybody
-        self.Me.dealMeIn(self.Deck)
-        self.Dealer.dealMeIn(self.Deck)
+        # First deal everybody 1st
+        self.Me.dealMeACard(self.Deck)
+        self.Dealer.dealMeACard(self.Deck)
         # Print 1 dealer card
-        print('Dealer Face up card: ' + str(self.Dealer.currentHand[0]))
+        system('clear')
+        print('Dealing Players...')
+        self.Me.print()
+        sleep(1)
+        self.Dealer.print()
+        sleep(1)
+        # Next deal everybody 2nd
+        self.Me.dealMeACard(self.Deck)
+        self.Dealer.dealMeACard(self.Deck)
+        # TEMP DEALER OBFUSCATION
+        self.Dealer.tempDealer.append(self.Dealer.currentHandFV[1])
+        self.Dealer.tempDealer.append(self.Dealer.currentHandS[1])
+        self.Dealer.currentHandFV[1] = '?'
+        self.Dealer.currentHandS[1]  = '?'
+        # Print 1 dealer card
+        system('clear')
+        print('Dealing Players...')
+        self.Me.print()
+        self.Dealer.print()
+        sleep(1)
         # Hit or Stand for everybody
+        system('clear')
+        print('Waiting for Player 1 input...')
+        self.Me.print()
+        self.Dealer.print()
         self.Me.hitOrStand(self.Deck)
+        # REVERSE DEALER OBFUSC ~
+        self.Dealer.currentHandFV[1] = self.Dealer.tempDealer[0]
+        self.Dealer.currentHandS[1]  = self.Dealer.tempDealer[1]
+        system('clear')
+        print('Dealer reveals and plays...')
+        self.Dealer.print()
+        self.Me.print()
+        sleep(2)
+        system('clear')
+        self.Me.print()
+        self.Dealer.print()
         self.Dealer.dealerHitOrStand(self.Deck)  
         # Determine who won
         self.determineWhoWon()
@@ -86,6 +119,9 @@ class Game:
 
     def determineWhoWon(self):
         # Determines who won and prints results
+        print('dealer ' + str(self.Dealer.finalHandValue))
+        print('p1bitch ' + str(self.Me.finalHandValue))
+        '''
         if self.Me.bust:
             print('BUST - You lost')
         elif self.Me.has21:
@@ -96,7 +132,7 @@ class Game:
             print('TIE')
         elif (self.Me.finalHandValue > self.Dealer.finalHandValue):
             print('YOU won')
-
+        '''
         return 0
 
 
@@ -114,6 +150,8 @@ class Player:
         self.currentHandFV  = [] # Vector of Face Values    e.g. ['2','10','K','A']
         self.currentHandS   = [] # Vector of Suits          e.g. ['♠', '♥','♣','♦']
         self.currentHandIV  = [] # Vector of Integer Values e.g. [ 2 , 10, 10 , 1 ]
+        self.tempDealer     = [] # Vector for temp dealer handling
+        
     def dealMeACard(self, Deck): # Deck Object
         # Removes one card from the deck and assigns to hand
         card = Deck.dealACard()
@@ -125,12 +163,6 @@ class Player:
 
         return 0
 
-    def dealMeIn(self, Deck): # Deck Object
-        # Deals player 2 cards
-        self.dealMeACard(Deck)
-        self.dealMeACard(Deck)
-
-        return 0
 
     def hitOrStand(self, Deck):
         # Interacts w player to determine hit or stand, bust
@@ -148,10 +180,13 @@ class Player:
             self.hit   = 1
         else:
             self.stand = 1
+            if self.numAces == 1: self.finalHandValue += 10
             return 0
         # While hit
         while (self.hit):
             self.dealMeACard(Deck)
+            system('clear')
+            
             self.print()
             self.finalHandValue = sum(self.currentHandIV)
             # Did we bust?
@@ -180,26 +215,78 @@ class Player:
                 else   :
                     self.stand = 1
                     self.hit = 0
+                    if (self.numAces == 1) and (self.finalHandValue < 22): self.finalHandValue += 10             
                     return 0
                 
         return 0
 
-    def dealerHitOrStand(self):
-        # Does hit or stand for dealer
+    def dealerHitOrStand(self, Deck):
+        # Does hit or stand for dealer ~ Hit on hard 16, soft 17
         # Determines final dealer score
-        # [Incomplete ~ Uses similar but automated logic as self.hitOrStand()]
-        self.finalHandValue = 15 # HC'd
-        
+        # First, do we have blackjack?
+        if (self.numAces == 1) and ( self.currentHandFV[0] in ['10','J','Q','K'] or self.currentHandFV[1] in ['10','J','Q','K']):
+            print('Dealer has 21!')
+            self.stand = 1
+            self.finalHandValue = 21
+            return 0
+        # Dealer automation: Do we hit or stand? (Uses hit on hard 16, soft 17)
+        self.finalHandValue = sum(self.currentHandIV)
+        if (self.finalHandValue < 17):  user = 1
+        elif (self.numAces == 1) and (self.finalHandValue < 7): user = 1
+        else: user = 0
+        if user == 1:  self.hit   = 1
+        else:
+            self.stand = 1
+            if self.numAces == 1: self.finalHandValue += 10
+            return 0
+        # While hit
+        while (self.hit):
+            self.dealMeACard(Deck)
+            self.print()
+            self.finalHandValue = sum(self.currentHandIV)
+            # Did we bust?
+            if self.finalHandValue > 21:
+                self.bust = 1
+                self.hit  = 0
+                print('Dealer busts!')
+                return 0
+            # Or do we have 21 w aces = 1?
+            elif self.finalHandValue == 21:
+                self.hit = 0
+                print('Dealer has 21!')
+                return 0
+            # Or do we have 21 w aces = 11?
+            # SIMPLIFIED LOGIC bc no splitting hand, etc
+            elif (self.numAces > 0) and (self.finalHandValue + 10 == 21):
+                self.finalHandValue = 21
+                self.hit = 0
+                print('Dealer has 21!')
+                return 0
+            # If nothing, then ask if hit again?
+            else:
+                if (self.finalHandValue < 17):  user = 1
+                elif (self.numAces == 1) and (self.finalHandValue < 7): user = 1
+                else: user = 0
+                if user:
+                    self.hit = 1
+                else   :
+                    self.stand = 1
+                    self.hit = 0
+                    if (self.numAces == 1) and (self.finalHandValue < 22): self.finalHandValue += 10
+                    return 0
+                
         return 0
 
     def resetHandForNextRound(self):
         # Reset variables for next round
-        self.bust = 0
-        self.stand = 0
-        self.numAces = 0
-        self.currentHand = []
-        self.currentHandValues = []
-
+        self.hit            = 0 # Booleans
+        self.bust           = 0 
+        self.stand          = 0
+        self.numAces        = 0 # Integers
+        self.finalHandValue = 0 
+        self.currentHandFV  = [] # Vector of Face Values    e.g. ['2','10','K','A']
+        self.currentHandS   = [] # Vector of Suits          e.g. ['♠', '♥','♣','♦']
+        self.currentHandIV  = [] # Vector of Integer Values e.g. [ 2 , 10, 10 , 1 ]
         return 0
 
     def print(self):
@@ -209,23 +296,25 @@ class Player:
         #self.currentHandFV  = [] # Vector of Face Values    e.g. ['2','10','K','A']
         #self.currentHandS   = [] # Vector of Suits          e.g. ['♠', '♥','♣','♦']
         num     = len(self.currentHandFV)
-        t1,t2,t3= '','',''
-        print('┌───────┐'*num)
+        t1,t3= '         ','         '
+        if self.isDealer: t2 = 'Dealer:  '
+        else            : t2 = 'Player 1:'
+        print('         '+'┌───────┐'*num)
         for i in range(num):
             #t1 =  t1 + '|' + str(faceVal[i]) + str('     |') if len(faceVal[i])==2 else t1 + '|' + str(faceVal[i]) + str('      |')
             t1 =  t1 + '|' + str(self.currentHandFV[i]) + str('     |') if len(self.currentHandFV[i])==2 else t1 + '|' + str(self.currentHandFV[i]) + str('      |')
         print(t1)
-        print('|       |'*num)
+        print('         ' + '|       |'*num)
         for i in range(num):
             #t2 =  t2 + '|   ' + str(suit[i]) + str('   |')
             t2 =  t2 + '|   ' + str(self.currentHandS[i]) + str('   |')
         print(t2)
-        print('|       |'*num)
+        print('         '+'|       |'*num)
         for i in range(num):
             #t3 =  t3 + '|     ' + str(faceVal[i]) + str('|') if len(faceVal[i])==2 else t3 + '|      ' + str(faceVal[i]) + str('|')
             t3 =  t3 + '|     ' + str(self.currentHandFV[i]) + str('|') if len(self.currentHandFV[i])==2 else t3 + '|      ' + str(self.currentHandFV[i]) + str('|')
         print(t3)
-        print('└───────┘'*num)
+        print('         '+'└───────┘'*num)
 
         
 class Deck:

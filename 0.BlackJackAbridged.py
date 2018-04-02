@@ -29,24 +29,22 @@ class Player:
 # Handles a player's hand and interaction w deck
     
     def __init__(self):
-        # Tracks player's hand and game play values/booleans 
-        self.bust           = 0 # Booleans
+        self.hit            = 0 # Booleans
+        self.bust           = 0 
         self.stand          = 0
-        self.has21          = 0
         self.isDealer       = 0
         self.numAces        = 0 # Integers
         self.finalHandValue = 0 
         self.currentHandFV  = [] # Vector of Face Values    e.g. ['2','10','K','A']
         self.currentHandS   = [] # Vector of Suits          e.g. ['♠', '♥','♣','♦']
         self.currentHandIV  = [] # Vector of Integer Values e.g. [ 2 , 10, 10 , 1 ]
+        self.dealerTemp     = [] # Vector for dealer temp hand
 
     def dealMeACard(self, Deck): # Deck Object
 
-    def dealMeIn(self, Deck): 
-
     def hitOrStand(self, Deck):
 
-    def dealerHitOrStand(self):
+    def dealerHitOrStand(self, Deck):
 
     def resetHandForNextRound(self):
 
