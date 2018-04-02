@@ -1,11 +1,12 @@
 def main():
-    print('yo')
+
     deck = Deck(1)
     p1   = Player()
-    print(p1.currentHandFV)
     p1.dealMeIn(deck)
-    print(p1.currentHandFV)
     p1.print()
+    p1.hitOrStand(deck)
+    print(p1.finalHandValue)
+ 
 
     
   
@@ -102,13 +103,12 @@ class Game:
 class Player:
 # Handles a player's hand and interaction w deck
     
-    def __init__(self):
+    def __init__(self, isDealer = 0):
         # Tracks player's hand and game play values/booleans
         self.hit            = 0 # Booleans
         self.bust           = 0 
         self.stand          = 0
-        self.has21          = 0
-        self.isDealer       = 0
+        self.isDealer       = isDealer
         self.numAces        = 0 # Integers
         self.finalHandValue = 0 
         self.currentHandFV  = [] # Vector of Face Values    e.g. ['2','10','K','A']
@@ -118,11 +118,10 @@ class Player:
         # Removes one card from the deck and assigns to hand
         card = Deck.dealACard()
         self.currentHandFV.append(card[0])
-        self.currentHandS.append(card[1])
+        self.currentHandS.append( card[1])
+        self.currentHandIV.append(card[2]) 
         if card[0]=='A':
-            # Double vectors
             self.numAces += 1
-            self.currentHandIV.append(card[2]) 
 
         return 0
 
@@ -136,20 +135,53 @@ class Player:
     def hitOrStand(self, Deck):
         # Interacts w player to determine hit or stand, bust
         # Fcn determines final player score
-        print(self.currentHand)
-        # If A and T/J/Q/K, you win
-        if (['A','T','J','Q','K'] in self.currentHand[0][0]) and (['A','T','J','Q','K'] in self.currentHand[1][0]):
-            self.win = 1
+        # First, do we have blackjack?
+        if (self.numAces == 1) and ( self.currentHandFV[0] in ['10','J','Q','K'] or self.currentHandFV[1] in ['10','J','Q','K']):
+            print('You have 21!')
             self.stand = 1
             self.finalHandValue = 21
             return 0
-        # Otherwise, stand/hit loop
-        self.stand = input('Press (1) for stand, (0) for hit')
-        '''
-        while !self.stand:
-           # [Incomplete ~ Prompts user to hit, prompts Ace usage, checks card totals
-            self.finalHandValue = 18
-        '''
+        # User input: Do we hit or stand?
+        self.finalHandValue = sum(self.currentHandIV)
+        user = int(input('Press 1 for Hit, 0 for Stand: '))
+        if user == 1:
+            self.hit   = 1
+        else:
+            self.stand = 1
+            return 0
+        # While hit
+        while (self.hit):
+            self.dealMeACard(Deck)
+            self.print()
+            self.finalHandValue = sum(self.currentHandIV)
+            # Did we bust?
+            if self.finalHandValue > 21:
+                self.bust = 1
+                self.hit  = 0
+                print('BUST!')
+                return 0
+            # Or do we have 21 w aces = 1?
+            elif self.finalHandValue == 21:
+                self.hit = 0
+                print('YOU HAVE 21!')
+                return 0
+            # Or do we have 21 w aces = 11?
+            # SIMPLIFIED LOGIC bc no splitting hand, etc
+            elif (self.numAces > 0) and (self.finalHandValue + 10 == 21):
+                self.finalHandValue = 21
+                self.hit = 0
+                print('YOU HAVE 21!')
+                return 0
+            # If nothing, then ask if hit again?
+            else:
+                user = int(input('Press 1 for Hit, 0 for Stand: '))
+                if user:
+                    self.hit = 1
+                else   :
+                    self.stand = 1
+                    self.hit = 0
+                    return 0
+                
         return 0
 
     def dealerHitOrStand(self):
