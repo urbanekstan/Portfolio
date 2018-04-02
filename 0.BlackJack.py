@@ -1,7 +1,13 @@
 def main():
     print('yo')
     deck = Deck(1)
-    a = deck.dealACard()
+    p1   = Player()
+    print(p1.currentHandFV)
+    p1.dealMeIn(deck)
+    print(p1.currentHandFV)
+    p1.print()
+
+    
   
 '''
 # By Stan Urbanek
@@ -33,6 +39,8 @@ def main():
 #     - This would be added to Deck class
 
 # Card train implements a hi-lo count
+
+# NOT READY FOR 2+ decks
 # ---------------------------------------------------------
 '''
 from random import randint
@@ -95,8 +103,9 @@ class Player:
 # Handles a player's hand and interaction w deck
     
     def __init__(self):
-        # Tracks player's hand and game play values/booleans 
-        self.bust           = 0 # Booleans
+        # Tracks player's hand and game play values/booleans
+        self.hit            = 0 # Booleans
+        self.bust           = 0 
         self.stand          = 0
         self.has21          = 0
         self.isDealer       = 0
@@ -105,14 +114,15 @@ class Player:
         self.currentHandFV  = [] # Vector of Face Values    e.g. ['2','10','K','A']
         self.currentHandS   = [] # Vector of Suits          e.g. ['♠', '♥','♣','♦']
         self.currentHandIV  = [] # Vector of Integer Values e.g. [ 2 , 10, 10 , 1 ]
-
     def dealMeACard(self, Deck): # Deck Object
         # Removes one card from the deck and assigns to hand
-        card = deck.dealACard()
-        self.currentHand.append(card[0])
-        self.currentHandValues.append(card[1])
-        if card[1] == 1:
+        card = Deck.dealACard()
+        self.currentHandFV.append(card[0])
+        self.currentHandS.append(card[1])
+        if card[0]=='A':
+            # Double vectors
             self.numAces += 1
+            self.currentHandIV.append(card[2]) 
 
         return 0
 
@@ -191,21 +201,18 @@ class Deck:
     
     def __init__(self, numDecks = 1):
         # Tracks specific cards/suits, multiple decks
-        self.faceVals = ['A','2','3','4','5','6','7','8','9','10','J','Q','K']
-        self.suits    = ['♠','♥','♣','♦']
+        self.suits    = ['♦','♥','♠','♣']
         self.numDecks = numDecks
-        self.deck     = []
-        
+        self.deck     = []        
         basisDeck     = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52]
         for i in range(0, self.numDecks):
             self.deck.append(basisDeck)
-        print(self.deck)
 
 
     def dealACard(self):
         # Randomly picks which deck and card num
-        deckNum = randint(0, len(self.deck))
-        cardIdx = randint(0, len(self.deck[deckNum]))
+        deckNum = randint(0, len(self.deck)-1)
+        cardIdx = randint(0, len(self.deck[deckNum])-1)
         cardNum = self.deck[deckNum][cardIdx]
         self.deck[deckNum].pop(cardIdx)
 
@@ -213,9 +220,26 @@ class Deck:
 
     def getCardFromCardNum(self, cardNum):
         # Determine Card face and value
-        # [Incomplete ~ Uses integer division and modulus functions]
-
-        return [faceValue, suit, intValue] # [faceValue - '2','10','A', suit - 1,2,3,4 ~ ♥♦♣♠, intValue - 1]
+        cardNum=cardNum-1
+        suitIdx = cardNum%4
+        suit = self.suits[cardNum % 4]
+        face = cardNum // 4
+        if   face == 0: faceValue, intValue = 'A', 1
+        elif face == 1: faceValue, intValue = '2', 2
+        elif face == 2: faceValue, intValue = '3', 3
+        elif face == 3: faceValue, intValue = '4', 4
+        elif face == 4: faceValue, intValue = '5', 5
+        elif face == 5: faceValue, intValue = '6', 6
+        elif face == 6: faceValue, intValue = '7', 7
+        elif face == 7: faceValue, intValue = '8', 8
+        elif face == 8: faceValue, intValue = '9', 9
+        elif face == 9: faceValue, intValue = '10', 10
+        elif face == 10: faceValue, intValue = 'J', 10
+        elif face == 11: faceValue, intValue = 'Q', 10
+        elif face == 12: faceValue, intValue = 'K', 10
+        else:print('GET CARD FROM CARD NUM IS BROKEN!!! face ' + str(face))
+        
+        return [faceValue, suit, intValue] # [faceValue - '2','10','A', suit - ♥♦♣♠, intValue - 1]
 
 
 
