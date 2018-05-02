@@ -1,0 +1,12 @@
+Info: Python scripts from 2 Courses taken at University of Texas at Austin
+ > CS 313E - ELEMENTS OF SOFTWARE DESIGN (2014)
+   Search & Store Algorithms (binary trees, linked lists), OOP
+
+ > CS 303E - ELEMENTS OF COMPUTERS/PROGRAMMING (2013)
+   Demonstrates basic python programming and script documentation
+
+Author: Stanley Urbanek
+
+Noteworthy Scripts:
+ > BinaryTree.py   : Demonstrates binary trees
+ > LinkedLists.py  : Demonstrates linked lists
