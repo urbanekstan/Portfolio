@@ -1,9 +1,14 @@
 Info: Tools to generate connections, initialize spin-ups, and examine security
 
+Python and Bash scripts
+
 Author: Stan Urbanek
 
--> A.Server.py and A.Client.py
+-> Server.py
+-> Client.py
      = A generic Server and Client model using sockets and pickle
 -> MySQLConnection.py
      = Connect to MySQL server and return MySQLConnection object
-     
+-> RaspPiLAMP.sh
+     = Sets up LAMP server on Raspberry Pi
+
