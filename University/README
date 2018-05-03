@@ -1,4 +1,8 @@
-Info: Python scripts from 2 Courses taken at University of Texas at Austin
+Info: Python scripts from 3 Courses taken at University of Texas at Austin
+
+ > M  368K  - NUMERICAL METHODSS FOR APPLICATIONS (2015)
+   Iterative methods for systems of equations, thread utilities
+   
  > CS 313E - ELEMENTS OF SOFTWARE DESIGN (2014)
    Search & Store Algorithms (binary trees, linked lists), OOP
 
@@ -7,6 +11,7 @@ Info: Python scripts from 2 Courses taken at University of Texas at Austin
 
 Author: Stanley Urbanek
 
-Noteworthy Scripts:
- > BinaryTree.py   : Demonstrates binary trees
- > LinkedLists.py  : Demonstrates linked lists
+Noteworthy Scripts
+ > IterativeMethods.cpp : Iterative methods to solve systems of equations
+ > BinaryTree.py        : Demonstrates binary trees
+ > LinkedLists.py       : Demonstrates linked lists
