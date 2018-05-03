@@ -12,3 +12,4 @@ python3 BlackJack.py
 
 BlackJack.py        ~ BlackJack w Card Counting Trainer complete
 BlackJackOutline.py ~ An outline w purpose of showing structure of classes
+                      NOTE: Script is not meant to run! Only to clarify structure
