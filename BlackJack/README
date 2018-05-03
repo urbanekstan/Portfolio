@@ -1,0 +1,14 @@
+Author: Stan Urbanek
+Date: April 25, 2018
+
+Info: A BlackJack game with an added Card Counting Trainer,
+      to provide practice for novice Card Counters.
+
+      This is an outline for a Java version. This can be found in
+      ~/repositories/BlackJack
+
+To run:
+python3 BlackJack.py
+
+BlackJack.py        ~ BlackJack w Card Counting Trainer complete
+BlackJackOutline.py ~ An outline w purpose of showing structure of classes
