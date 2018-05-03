@@ -4,8 +4,9 @@ Info: This is research by simulations of Methane diffusion through shale rock af
 
 NOTE: Ask me for videos of the simulation! 
 
-SimulationVectors.py : Python script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
+Scripts:
+ > SimulationVectors.py : Python script that outputs 3D positions of carbon locations in Carbon Nanotubes (CNTs)
 
-in.meamCNT : LAMMPS file that defines Carbon Nanotube using MEAM potential
+ > in.meamCNT : LAMMPS file that defines Carbon Nanotube using MEAM potential
 
-in.SimulationMethaneInCNT : LAMMPS Script that populates CNT with methane, then drives methane through it
+ > in.SimulationMethaneInCNT : LAMMPS Script that populates CNT with methane, then drives methane through it
