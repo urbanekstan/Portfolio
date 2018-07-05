@@ -1,9 +1,9 @@
 This is a portfolio designed to showcase some of my work over the years.
 
 
-/BlackJack  ~ [Version 1.1] A Black Jack game simulator w a Card Counting Trainer
- [2018]       Trainer is designed for those just learning how to count cards
-	      [Version 1.2] v1.2 is in Java, found back 1 repository
+/BlackJack  ~ [Version 1.2] v1.2 is in Java, found back 1 repository
+ [2018]       [Version 1.1] A Black Jack game simulator w a Card Counting Trainer
+              Trainer is designed for those just learning how to count cards      
 	    ~ LANG: Python, Java (Found back 1 repository)
 
 /Security   ~ Tools to generate connections and other tools
