@@ -1,14 +1,19 @@
 from random import randint
 from os import system
 from time import sleep
+ 
+from Deck import Deck
+from Player import Player
+from CardCounter import CardCounter
+from Game import Game
 
 def main():
 
-    system('clear')
+    #system('clear')
     game = Game(3)
     game.playGame()
 
-
+'''
 def graphics(message, Player1, Dealer, action):
     # Organizes display for readability
     system('clear')
@@ -19,7 +24,7 @@ def graphics(message, Player1, Dealer, action):
     sleep(1)
 
     return 0
-
+'''
 '''
 # BlackJack Game w Card Counting Trainer
 # By Stan Urbanek
@@ -42,7 +47,7 @@ def graphics(message, Player1, Dealer, action):
 # ---------------------------------------------------------
 '''
 
-
+'''
 class Game:
 # Handles game play
     
@@ -189,8 +194,8 @@ class Game:
         else: print('determineWhoWon broke')
         
         return 0
-
-
+'''
+'''
 class Player:
 # Handles a player's hand and interaction w deck
     
@@ -286,8 +291,8 @@ class Player:
             t3 =  t3 + '|     ' + str(self.currentHandFV[i]) + str('|') if len(self.currentHandFV[i])==2 else t3 + '|      ' + str(self.currentHandFV[i]) + str('|')
         print(t3)
         print('         '+'└───────┘'*num)
-
-        
+'''
+'''        
 class Deck:
 # Tracks the deck, chooses cards
     
@@ -332,8 +337,8 @@ class Deck:
         else:print('GET CARD FROM CARD NUM IS BROKEN!!! face ' + str(face))
         
         return [faceValue, suit, intValue] # [faceValue - '2','10','A', suit - ♥♦♣♠, intValue - 1]
-
-
+'''
+'''
 class CardCounter():
 # Counts cards based on Hi-Lo strategy
 
@@ -414,7 +419,7 @@ class CardCounter():
         print('Subtract 1 from the True Count to determine how many units to bet. Multiply the number of units to bet by your betting unit. \n\nFor Example, your betting unit is 100, running count is +10, true count is +5, then the optimal bet would be 4X100 which gives us 400.')
 
 
-        
+'''        
 
 
 main()
