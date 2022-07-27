@@ -1,15 +1,20 @@
 Author: Stan Urbanek
 Date: April 11, 2018
+BlackJack Game with Card Counting Trainer
 
-Info: [Version 1.2] v1.2 is written in Java and found in:
-      ~/repositories/BlackJack
-      
-      [Version 1.1] A Black Jack game simulator w a Card Counting Traine,
+Info: [Version 1.1] A Black Jack game simulator with a Card Counting Trainer,
       to provide practice for novice Card Counters.
 
-To run:
-python3 BlackJack.py
+To run: python3 BlackJack.py
 
-BlackJack.py        ~ BlackJack w Card Counting Trainer complete
-BlackJackOutline.py ~ An outline w purpose of showing structure of classes
-                      NOTE: BlackJackOutline.py is not meant to run! Only to clarify structure
+Structure: There are 4 classes
+  -> Game        - Handles game play. Game contains all other objects
+  -> Deck        - Tracks the deck, chooses cards
+  -> Player      - Handles player's hand and interaction with Deck
+  -> CardCounter - Counts cards, logs and desplays hands
+
+Misc Rules: Card trainer implements a hi-lo count
+            Dealer hits on hard 16, soft 17
+
+Possible future functionality: Betting, based on counts
+
