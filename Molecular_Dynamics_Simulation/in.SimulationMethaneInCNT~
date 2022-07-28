@@ -1,0 +1,70 @@
+# LAMMPS Script that populates CNT with methane,
+# then drives methane through it.
+# This simulates methane diffusion during fracking.
+
+# Methane and CNT read-ins
+
+5150 atoms
+3 atom types
+
+-171 171 xlo xhi
+-50 50 ylo yhi
+-50 50 zlo zhi
+        
+
+Masses
+
+1 12.0107
+2 1.0080
+3 12.0107
+
+Atoms            
+
+1 1 0.0 0.0 0.70916978246 0.0297230203843
+2 1 0.0 2.45951214675 0.70916978246 0.0297230203843
+3 1 0.0 4.9190242935 0.70916978246 0.0297230203843
+4 1 0.0 7.37853644024 0.70916978246 0.0297230203843
+5 1 0.0 9.83804858699 0.70916978246 0.0297230203843
+
+# Combining methane and CNT scripts
+
+dimension       3
+units        lj
+
+boundary    p p p
+atom_style    charge
+
+read_data    data.realDataCombo
+
+           # 1 = C (CNT); 2 = H (Methane); 3 = C (Methane)
+
+print 'success 1'
+
+group         CNT type 1
+group        methane type 2 3
+
+print 'success 2'
+
+pair_style     reax/c lmp_control
+print ' 2.2 '
+pair_coeff     * * ffield.reax.cho C H C
+
+print 'success 3'
+
+neighbor     2 bin     
+neigh_modify     every 10 delay 0 check no
+           # This section taken from methane!
+
+fix        1 methane nve
+fix        2 methane qeq/reax 1 0.0 10.0 1e-6 param.qeq  # From methane
+fix        3 methane temp/berendsen 500.0 500.0 100.0    # From methane
+fix         4 methane addforce 100.0 0.0 0.0
+
+thermo        10     # From CNT
+timestep    1e-3         
+
+dump        3 all movie 5 realestIllest.mpg element element &
+        axes yes 0.8 0.02 view 93 -120 zoom 8 adiam 1.5 size 3000 3000
+# 93 -145
+
+run         5000

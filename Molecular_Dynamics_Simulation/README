@@ -1,0 +1,28 @@
+Molecular Dynamics Simulation
+Author: Stan Urbanek
+Date: Dec 2014 - Dec 2015
+
+Info: Molecular Dynamics Simulation of Methane, which is a natural gas
+      found trapped under shale rock under the Earth's surface. The application
+      is to hydrofracturing (a.k.a. "fracking"), as the methane diffuses
+      through nanopores in shale rock after shale rock is fracked.
+
+      I was research lead for this project, under guidance of Dr. Michael
+      Marder, for my University of Texas senior year project. It was accepted
+      as completion for a Certificate of Scientific Computation.
+
+      Written in Python and LAMMPS
+
+Outline:
+      MethaneDiffusionSimluation.pdf - Final research paper outlining the
+      	application, the process, the simulation, and the results.
+
+      SimulationMethaneContained.mpg - Video of initialized simulation, of
+        the carbon nanotube (simulation of nanopore) containing the methane.
+
+      in.* - LAMMPS scripts
+
+      *.py - Python scripts used for initializing atom locations
+
+      honeycombAtomicPlacement.txt - text file to hold atom locations, which
+        gets fed into LAMMPS scripts

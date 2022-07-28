@@ -1,0 +1,39 @@
+# Using MEAM potential for Carbon Nanotube (CNT)
+
+dimension 3
+units        lj      
+boundary    p p p   
+
+atom_style    charge
+
+
+read_data    data.meamCNT
+                # Reads in: num atoms, num atom types, sim box size, atomic locations
+
+
+group CNT type 1
+
+pair_style    meam
+pair_coeff    * * library2.meam C NULL C
+
+        #* * library.meam C  NULL C     # This should work  
+        #* * library.meam Si C SiC.meam Si C
+
+#velocity CNT create 300 12345 # set 0 0 0 (temp/velocity); Set to 300K
+
+neighbor    0.3 bin
+neigh_modify    delay 10
+
+thermo        10
+timestep    1e-3                    #.001
+
+
+dump        3 all movie 5 RefiningCNT.mpg element element &
+        axes yes 0.8 0.02 view 93 -180 zoom 11 adiam 1.5 size 1028 1028
+#<>
+#dump        3 all movie 5 movie.mpg element element &
+#        axes yes 0.8 0.02 view 60 -30 adiam 2
+
+#dump_modify    3 pad 3 element Si C
+
+run        5000
