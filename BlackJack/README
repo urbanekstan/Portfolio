@@ -2,7 +2,10 @@ BlackJack Game with Card Counting Trainer
 Author: Stan Urbanek
 Date: April 11, 2018
 
-Info: [Version 1.1] A Black Jack game simulator with a Card Counting Trainer.
+Info: [Version 1.1] A BlackJack game simulator with a Card Counting Trainer.
+      Initial inpiration was from an interview question I was asked
+      'How would you design a BlackJack simulation?'
+
       Currently, the game is played with 1 deck between the dealer and player.
       After each round, the player will have opportunity to compare their own
       "running count" to the actual running count, a number used to count cards.
@@ -21,7 +24,8 @@ Structure: There are 4 classes
   -> Player      - Handles player's hand and interaction with Deck
   -> CardCounter - Counts cards, logs and desplays hands
 
-
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Structure in detail:
 
 class Game:
 # Handles game play

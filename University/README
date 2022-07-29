@@ -1,17 +1,28 @@
-Info: Python scripts from 3 Courses taken at University of Texas at Austin
+Oldest scripts written during time at University of Texas
+Author: Stan Urbanek
+Date: 2013-2015
 
- > M  368K  - NUMERICAL METHODSS FOR APPLICATIONS (2015)
+Info: Python and C++ scripts from 3 Courses taken at University of Texas at Austin
+
+Classes and outline:
+ > M  368K  - NUMERICAL METHODS FOR APPLICATIONS (2015)
    Iterative methods for systems of equations, thread utilities
+   
+   - IntroToIterativeMethods.cpp
+   - IterativeMethods.cpp
    
  > CS 313E - ELEMENTS OF SOFTWARE DESIGN (2014)
    Search & Store Algorithms (binary trees, linked lists), OOP
 
+   - LinkedList.py
+   - BinaryTree.py (Won't run bc lacks input file)
+   - Josephus.py (Won't run bc lacks input file)
+
  > CS 303E - ELEMENTS OF COMPUTERS/PROGRAMMING (2013)
    Demonstrates basic python programming and script documentation
 
-Author: Stanley Urbanek
+   - CreditCard.py
+   - Day.py
+   - Hailstone.py
+   - ISBN.py
 
-Noteworthy Scripts
- > IterativeMethods.cpp : Iterative methods to solve systems of equations
- > BinaryTree.py        : Demonstrates binary trees
- > LinkedLists.py       : Demonstrates linked lists
