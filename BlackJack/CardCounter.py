@@ -53,6 +53,12 @@ class CardCounter():
     def showRunningCount(self):
         # Prompts if to display running count
         display = int(input('What is running count? '))
+        print('\n> Player 1 (this hand)     : ' + str(self.playerHand))
+        print('> Dealer (this hand)       : ' + str(self.dealerHand))
+        print('> Running Count (cumulative) : ' + str(sum(self.runningCount))+'\n')   
+        x = input('[Press ENTER to Proceed]')
+        
+        '''
         if display:
             print('\n> Player 1      : ' + str(self.playerHand))
             print('> Dealer        : ' + str(self.dealerHand))
@@ -61,7 +67,7 @@ class CardCounter():
             print('[       : Treat each player\'s hand as one +/- count] ')
             print('[       : Running Count is net cumulative total   ] \n')
             x = input('[Press ENTER to Proceed]')
-
+        '''
         return 0
 
     def endGameDisplay(self):
@@ -74,10 +80,14 @@ class CardCounter():
         print(' Player Cardlog ' + str(self.playerFaces))
         print('\n Dealer counts    ' + str(self.dealerCounts))
         print(' Player counts    ' + str(self.playerCounts))
-        print('\n Running Count  ' + str(self.runningCount))
+        print('\n Running Count  ' + str(sum(self.runningCount)))
+        print('\n Want to know how much to bet? You could use the running count to do that...\n\n')
+
+        '''
         print(' True Count*    ' + str(self.runningCount))
         print(' Bet^           ' + 'Will add later')
 
         print(' \n\n*True Count is used to determine how to bet. \n True Count = [Running Count] / [Decks left ~ rounded to nearest 1/2 deck] \n Decks left ~ 1 and 0.5 in our case')
         print('\n^Bet is the recommended bet\n Bet = TrueCount - 1 ( Betting Unit)\n Assume 1 Betting Unit = $100')
         print('Subtract 1 from the True Count to determine how many units to bet. Multiply the number of units to bet by your betting unit. \n\nFor Example, your betting unit is 100, running count is +10, true count is +5, then the optimal bet would be 4X100 which gives us 400.')
+        '''

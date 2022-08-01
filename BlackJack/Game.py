@@ -26,9 +26,9 @@ class Game:
         # Uses depleted deck from last round
         system('clear')
         openingText = 'The BlackJack Card Counting Trainer\n ~ Uses Hi-Lo Counting Strategy\n ~ By Stan Urbanek\n\n'
-        blackJackRules = 'Quick BlackJack Rules:\n ~ The object of the game is to get as close to 21 without going over\n ~ Go over 21 and you bust (lose)\n ~ Each player is dealt 2 cards (Aces count as either 1 or 11\n ~ Players then choose between \n   ~ Hitting (drawing) a card from the deck\n   ~ Standing (staying) w current hand \n\n'
-        cardCounter = 'Hi-Lo Counting Strategy:\n ~ For every card displayed\n     Hi Cards    10 J Q K A => RunningCount - 1 \n     Lo Cards     2 3 4 5 6 => RunningCount + 1\n     Zero Cards   7 8 9     => RunningCount + 0\n    (The logic is that as the favorable Hi cards are used up, there are fewer Hi cards for you to get later in the game)\n ~ Your bet size would be proportional to this running count \n\nWe will try a ' + str(self.maxRounds-1) + ' round game. \nYou are given the option at the end of each round to look at the running count. \n\n[Press ENTER to start]'
-        howToCount = 'Recommended way to count: \n ~ Wait '
+        blackJackRules = 'Quick BlackJack Rules:\n ~ The object of the game is to get as close to 21 without going over\n ~ Go over 21 and you bust (lose)\n ~ Each player is dealt 2 cards (Aces count as either 1 or 11)\n ~ Players then choose between \n   ~ Hitting (drawing) a card from the deck\n   ~ Standing (staying) w current hand \n\n'
+        cardCounter = 'Hi-Lo Counting Strategy:\n ~ The "Running Count" starts at 0, with a full Deck \n ~ For every card displayed\n     Hi Cards    10 J Q K A => RunningCount - 1 \n     Lo Cards     2 3 4 5 6 => RunningCount + 1\n     Zero Cards   7 8 9     => RunningCount + 0 \n\n ~ If the running count increases, the advantage shifts to the player; \n     as it decreases, the dealer\'s advance increases \n ~ The logic is that as favorable Hi cards are used up, \n     there are fewer Hi cards for you to get later on.\n\nWe will try a ' + str(self.maxRounds-1) + ' round game. \n\n[Press ENTER to start]'
+        howToBet = 'Your bet size would be proportional to this running count. Recommended way to count: \n ~ Wait '
         
         print(openingText + blackJackRules + cardCounter)
         input('')

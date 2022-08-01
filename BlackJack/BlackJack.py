@@ -6,7 +6,7 @@ from Game import Game
 from Deck import Deck
 from Player import Player
 from CardCounter import CardCounter
-
+from graphics import graphics
 
 def main():
 
