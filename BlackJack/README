@@ -7,22 +7,22 @@ Info: [Version 1.1] A BlackJack game simulator with a Card Counting Trainer.
       'How would you design a BlackJack simulation?'
 
       Currently, the game is played with 1 deck between the dealer and player.
-      After each round, the player will have opportunity to compare their own
-      "running count" to the actual running count, a number used to count cards.
+      After each round, the player will compare their own "running count" to the
+      actual running count, a number used to count cards and determine how to bet.
 
 To run: python3 BlackJack.py
-
-Misc Rules: Dealer hits on hard 16, soft 17
-     	    Card trainer implements a hi-lo count
-
-Future Versions: Use 2+ Decks, 2-5 Players
-       		 Add Betting, based on "running counts"
 
 Structure: There are 4 classes
   -> Game        - Handles game play. Game contains all other objects
   -> Deck        - Tracks the deck, chooses cards
   -> Player      - Handles player's hand and interaction with Deck
-  -> CardCounter - Counts cards, logs and desplays hands
+  -> CardCounter - Counts cards, logs and displays running counts
+
+Future Versions: Use 2+ Decks, 2-5 Players
+       		 Add Betting, based on "running counts"
+                   
+Misc Rules: Dealer hits on hard 16, soft 17
+     	    Card trainer implements a hi-lo count
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Structure in detail:
