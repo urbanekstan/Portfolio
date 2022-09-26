@@ -1,8 +1,5 @@
-This is a portfolio designed to showcase some of my work over the years.
+This portfolio is intended to be a proof on concept of the development work I'm capable of.
 Languages include Python, C++, Bash Shell Scripting, and LAMMPS (by Sandia National Labs)
-
-All code from my 2 years at Applied Research Laboratories is missing, as it
-was proprietary and protected by a Department of Defense Security Clearance.
 
 /BlackJack  ~ A BlackJack game simulator with a Card Counting Trainer
  [2018]       Initial inpiration was from an interview question I was asked
@@ -18,7 +15,7 @@ was proprietary and protected by a Department of Defense Security Clearance.
 /Molecular Dynamics Simulation
  [2015]	    ~ Simulation of methane diffusion thru nanopores in shale rock
             (Application to Hydrofracturing)
-	    This was a year-long self-driven research project under Dr Michael Marder
+	    This was a year-long senior thesis under Dr Michael Marder
 
 	    ~ Languages: Python, LAMMPS (by Sandia National Labs)
 
