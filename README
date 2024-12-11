@@ -1,25 +1,15 @@
-This portfolio is intended to be a proof on concept of the development work I'm capable of.
-Languages include Python, C++, Bash Shell Scripting, and LAMMPS (by Sandia National Labs)
+This is a technical portfolio of simulations and code I've written as the sole author.
 
 /BlackJack  ~ A BlackJack game simulator with a Card Counting Trainer
- [2018]       Initial inpiration was from an interview question I was asked
-  	      'How would you design a BlackJack simulation?'
- 
-	    ~ Languages: Python
+ [2018]     ~ Languages: Python
 
 /Security   ~ A Raspberry Pi computer setup to practice Penetration Testing
- [2017-18]    & learn Information Security
- 
-	    ~ Languages: Python, Bash Shell Scripts
+ [2017-18]  ~ Languages: Python, Bash Shell Scripts
 	   
 /Molecular Dynamics Simulation
- [2015]	    ~ Simulation of methane diffusion thru nanopores in shale rock
-            (Application to Hydrofracturing)
-	    This was a year-long senior thesis under Dr Michael Marder
-
-	    ~ Languages: Python, LAMMPS (by Sandia National Labs)
+ [2015]	    ~ Senior thesis: Simulation of methane diffusion thru nanopores in shale rock
+            ~ Languages: Python, LAMMPS (by Sandia National Labs)
 
 /University ~ Scripts from 3 classes at University of Texas
- [2013-15]    Topics include Software Design, Iterative Methods (Math class)
- 
-	    ~ Languages: C++, Python  
+ [2013-15]  ~ Topics include Software Design, Iterative Methods (Math class)
+            ~ Languages: C++, Python  
